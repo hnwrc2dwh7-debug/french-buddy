@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon Cahier de Français — Exercices Bilingues FR / EN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand" onclick="renderHome()" title="Retour à l'accueil / Back to Home">
+        <div class="brand-monogram">FR</div>
+        <div>
+          <div class="brand-title">Mon Cahier de Français</div>
+          <div class="brand-sub">Atelier bilingue Collège &middot; Français / English</div>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <span class="stat-pill" id="nav-xp">0 pts</span>
+        <span class="stat-pill stat-pill-streak" id="nav-streak">Série : 0</span>
+        <a class="btn btn-outline" href="qr.html" style="text-decoration:none;">QR Code</a>
+        <button class="btn btn-ink" type="button" onclick="openMemoModal()">
+          Fiches Verbes &amp; Mémo
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Dynamic App Container -->
+  <main class="container" id="app"></main>
+
+  <!-- Verb Conjugation & Grammar Cheat-Sheet Modal -->
+  <div id="memo-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true">
+    <div class="modal-panel">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title">Aide-mémoire &amp; Tableaux de verbes</h2>
+          <div class="modal-sub">
+            Bilingual French / English reference &mdash; consultable même en plein exercice
+          </div>
+        </div>
+        <button class="btn btn-outline" type="button" onclick="closeMemoModal()">Fermer / Close</button>
+      </div>
+      <div id="memo-tabs" class="modal-tabs"></div>
+      <div id="memo-body" class="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="illustrations.js"></script>
+  <script src="data.js"></script>
+  <script src="vocab_and_verbs.js"></script>
+  <script src="extra_modules.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
